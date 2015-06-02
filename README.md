@@ -6,6 +6,36 @@ string-score
 A pure (functional) version of [Joshaven Potter's `string_score`][ss] package
 which doesn't alter the String prototype.
 
+Usage
+-----
+
+This module exports a single function with the following signature:
+
+```
+score(target, query[, fuzziness]);
+```
+
+`target` is the string to score the `query` against, `query` is the string to
+score against the `target`, and `fuzziness` is an optional number between 0 and
+1 indicating how relaxed to be (0 being exact matches required, 1 allowing
+misspellings, defaults to 0).
+
+```js
+var score = require('string-score');
+
+// Non-fuzzy scoring
+score('hello', 'hello'); // => 1
+score('hello', ''); // => 0
+score('hello', 'he'); // => 0.71
+score('hello', 'hellu'); // => 0
+
+// Fuzzy scoring
+score('hello', 'hello', 0.5); // => 1
+score('hello', '', 0.5); // => 0
+score('hello', 'he', 0.5); // => 0.71
+score('hello', 'hellu', 0.5); // => 0.5766666666666665
+```
+
 License
 -------
 
