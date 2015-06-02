@@ -1,6 +1,6 @@
 {
   "name": "string-score",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A pure (functional) version of Joshaven Potter's string_score package which doesn't alter the String prototype.",
   "main": "lib/index.js",
   "scripts": {
