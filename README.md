@@ -16,9 +16,11 @@ score(target, query[, fuzziness]);
 ```
 
 `target` is the string to score the `query` against, `query` is the string to
-score against the `target`, and `fuzziness` is an optional number between 0 and
-1 indicating how relaxed to be (0 being exact matches required, 1 allowing
-misspellings, defaults to 0).
+score against the `target`, and `fuzziness` is an optional number between `0`
+and `1` indicating how relaxed to be while scoring (`0` being exact matches
+required, `1` allowing misspellings, defaults to `0`). The result is a number
+between `0` and `1` indicating how well `query` matches `target` (`0` being no
+match and `1` being a perfect match).
 
 ```js
 var score = require('string-score');
@@ -28,12 +30,16 @@ score('hello', 'hello'); // => 1
 score('hello', ''); // => 0
 score('hello', 'he'); // => 0.71
 score('hello', 'hellu'); // => 0
+score('hello', 'ello'); // => 0.585
+score('hello', 'ullu'); // => 0
 
 // Fuzzy scoring
 score('hello', 'hello', 0.5); // => 1
 score('hello', '', 0.5); // => 0
 score('hello', 'he', 0.5); // => 0.71
 score('hello', 'hellu', 0.5); // => 0.5766666666666665
+score('hello', 'ello', 0.5); // => 0.585
+score('hello', 'ullu', 0.5); // => 0.1125
 ```
 
 License
