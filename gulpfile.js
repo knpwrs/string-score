@@ -20,6 +20,11 @@ gulp.task('test', ['lint'], function () {
     }));
 });
 
+gulp.task('bench', function () {
+  return gulp.src(['bench/*.js'], {read: false})
+    .pipe(gp.bench());
+});
+
 gulp.task('default', function () {
   gulp.start('test');
   gulp.watch('{lib,test}/*', ['test']);
