@@ -13,6 +13,10 @@ describe('string-score', function () {
       expect(score('Foo Bar', 'Foo_Bar')).to.equal(0.0);
     });
 
+    it('should return 0.0 when passed an empty query', function () {
+      expect(score('Foo Bar', '')).to.equal(0.0);
+    });
+
     it('should only match sequentially', function () {
       expect(score(hello, 'WH')).to.equal(0.0);
     });
@@ -47,11 +51,11 @@ describe('string-score', function () {
     });
 
     it('has an acronym bonus', function () {
-      expect(score(hello, 'HW')).to.be.gt(score(hello, 'Ho'));
-      expect(score('Hillsdale Michigan', 'HiMi')).to.be.gt(score('Hillsdale, Michigan', 'Hil'));
-      expect(score('Hillsdale Michigan', 'HiMi')).to.be.gt(score('Hillsdale, Michigan', 'illsda'));
-      expect(score('Hillsdale Michigan', 'HiMi')).to.be.gt(score('Hillsdale, Michigan', 'Hills'));
-      expect(score('Hillsdale Michigan', 'HiMi')).to.be.gt(score('Hillsdale, Michigan', 'hillsd'));
+      expect(score(hello, 'HW', 0.5)).to.be.gt(score(hello, 'Ho', 0.5));
+      expect(score('Hillsdale Michigan', 'HiMi', 0.5)).to.be.gt(score('Hillsdale, Michigan', 'Hil', 0.5));
+      expect(score('Hillsdale Michigan', 'HiMi', 0.5)).to.be.gt(score('Hillsdale, Michigan', 'illsda', 0.5));
+      expect(score('Hillsdale Michigan', 'HiMi', 0.5)).to.be.gt(score('Hillsdale, Michigan', 'Hills', 0.5));
+      expect(score('Hillsdale Michigan', 'HiMi', 0.5)).to.be.gt(score('Hillsdale, Michigan', 'hillsd', 0.5));
     });
 
     it('has a beginning of string bonus', function () {
