@@ -1,6 +1,8 @@
 string-score
 ============
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/knpwrs/string-score.svg)](https://greenkeeper.io/)
+
 [![Build Status](https://travis-ci.org/KenPowers/string-score.svg?branch=master)](https://travis-ci.org/KenPowers/string-score) [![Coverage Status](https://coveralls.io/repos/KenPowers/string-score/badge.svg?branch=master)](https://coveralls.io/r/KenPowers/string-score?branch=master)
 
 A pure (functional) version of [Joshaven Potter's `string_score`][ss] package
