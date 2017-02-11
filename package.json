@@ -23,14 +23,14 @@
   "homepage": "https://github.com/KenPowers/string-score",
   "devDependencies": {
     "auto-plug": "^1.0.2",
-    "chai": "^2.3.0",
+    "chai": "^3.5.0",
     "coveralls": "^2.11.2",
     "gulp": "^3.9.0",
     "gulp-bench": "^1.1.0",
-    "gulp-jshint": "^1.11.0",
-    "gulp-spawn-mocha": "^2.0.1",
+    "gulp-jshint": "^2.0.4",
+    "gulp-spawn-mocha": "^3.1.0",
     "jshint-stylish": "^2.0.0",
-    "microtime": "^1.4.2",
+    "microtime": "^2.1.2",
     "string_score": "^0.1.22"
   }
 }
