@@ -24,7 +24,7 @@
   "devDependencies": {
     "auto-plug": "^1.0.2",
     "chai": "^4.1.0",
-    "coveralls": "^2.11.2",
+    "coveralls": "^3.0.0",
     "gulp": "^3.9.0",
     "gulp-bench": "^1.1.0",
     "gulp-jshint": "^2.0.4",
